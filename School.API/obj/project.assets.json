@@ -107,6 +107,56 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "School.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "School.Data": "1.0.0",
+          "School.Service": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/School.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/School.Core.dll": {}
+        }
+      },
+      "School.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/School.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/School.Data.dll": {}
+        }
+      },
+      "School.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "School.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/School.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/School.Infrastructure.dll": {}
+        }
+      },
+      "School.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "School.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/School.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/School.Service.dll": {}
+        }
       }
     }
   },
@@ -460,11 +510,32 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "School.Core/1.0.0": {
+      "type": "project",
+      "path": "../School.Core/School.Core.csproj",
+      "msbuildProject": "../School.Core/School.Core.csproj"
+    },
+    "School.Data/1.0.0": {
+      "type": "project",
+      "path": "../School.Data/School.Data.csproj",
+      "msbuildProject": "../School.Data/School.Data.csproj"
+    },
+    "School.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../School.Infrastructure/School.Infrastructure.csproj",
+      "msbuildProject": "../School.Infrastructure/School.Infrastructure.csproj"
+    },
+    "School.Service/1.0.0": {
+      "type": "project",
+      "path": "../School.Service/School.Service.csproj",
+      "msbuildProject": "../School.Service/School.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.OpenApi >= 7.0.13",
+      "School.Core >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -500,7 +571,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj": {
+              "projectPath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
