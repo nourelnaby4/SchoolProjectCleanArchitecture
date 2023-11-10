@@ -1,0 +1,11 @@
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\bin\Debug\net7.0\School.Data.deps.json
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\bin\Debug\net7.0\School.Data.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\bin\Debug\net7.0\School.Data.pdb
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.AssemblyInfoInputs.cache
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.AssemblyInfo.cs
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.csproj.CoreCompileInputs.cache
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\refint\School.Data.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.pdb
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\ref\School.Data.dll

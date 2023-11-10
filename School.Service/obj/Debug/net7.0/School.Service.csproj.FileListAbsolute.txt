@@ -1,0 +1,17 @@
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Service.deps.json
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Service.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Service.pdb
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.AssemblyInfoInputs.cache
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.AssemblyInfo.cs
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.csproj.CoreCompileInputs.cache
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\refint\School.Service.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.pdb
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\ref\School.Service.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Data.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Infrastructure.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Data.pdb
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\bin\Debug\net7.0\School.Infrastructure.pdb
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.csproj.AssemblyReference.cache
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Service\obj\Debug\net7.0\School.Service.csproj.CopyComplete
