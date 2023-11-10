@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace School.Infrastructure.Repositories
 {
    
-    public class StudentRepository : IStudentRepository
+    public class StudentRepository:GenericRepositoryAsync<Student>, IGenericRepository<Student> ,IStudentRepository
     {
         #region fields
         private readonly ApplicationDbContext _context;
@@ -21,7 +21,7 @@ namespace School.Infrastructure.Repositories
 
 
         #region contructors
-        public StudentRepository(ApplicationDbContext context)
+        public StudentRepository(ApplicationDbContext context):base(context) 
         {
             _context = context;
         }

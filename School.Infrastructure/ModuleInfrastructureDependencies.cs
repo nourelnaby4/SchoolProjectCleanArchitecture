@@ -14,6 +14,7 @@ namespace School.Infrastructure
         public static IServiceCollection AddInfrastructureDependencies(this IServiceCollection services)
         {
             services.AddTransient<IStudentRepository,StudentRepository>();
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepositoryAsync<>));
 
             return services;
         }

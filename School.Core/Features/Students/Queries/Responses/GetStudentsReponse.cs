@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace School.Core.Features.Students.Queries.Responses
 {
-    public class GetStudentsReponse
+    public class GetStudentsResponse
     {
 
         public int Id { get; set; }

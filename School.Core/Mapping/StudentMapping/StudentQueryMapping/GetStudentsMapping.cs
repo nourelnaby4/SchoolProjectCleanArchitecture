@@ -12,7 +12,7 @@ namespace School.Core.Mapping.StudentMapping
     {
         public void GetStudentsMapping()
         {
-            CreateMap<Student, GetStudentsReponse>()
+            CreateMap<Student, GetStudentsResponse>()
                 .ForMember(des => des.DepartmentName, option => option.MapFrom(src => src.Department.Name))
                 .ReverseMap();
         }
