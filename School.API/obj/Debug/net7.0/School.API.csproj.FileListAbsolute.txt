@@ -84,3 +84,5 @@ F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\Sch
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\School.Service.pdb
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\MediatR.dll
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\MediatR.Contracts.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\AutoMapper.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace School.Infrastructure
 {
-    public static class InfrastructureModelDependencies
+    public static class ModuleInfrastructureDependencies
     {
         public static IServiceCollection AddInfrastructureDependencies(this IServiceCollection services)
         {

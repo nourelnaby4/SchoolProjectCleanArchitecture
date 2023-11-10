@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿using AutoMapper;
 using School.Core.Features.Students.Queries.Responses;
 using School.Data.Entities;
 using System;
@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Core.Features.Students.Queries.Models
+namespace School.Core.Mapping.StudentMapping
 {
-    public class GetStudentsQuery : IRequest<IEnumerable<GetStudentsReponse>>
+    public partial class StudentProfile :Profile
     {
+        public StudentProfile()
+        {
+            GetStudentsMapping();
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace School.Infrastructure.Repositories
         #region functions
         public async Task<IEnumerable<Student>> GetAllAsync()
         {
-            return await _context.students.ToListAsync();
+            return await _context.students.Include(x=>x.Department).ToListAsync();
         }
         #endregion
 
