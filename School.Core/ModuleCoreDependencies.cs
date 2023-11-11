@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using School.Core.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace School.Core
             services.AddMediatR(config=>config.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddTransient<ControllerResponse>();
 
             return services;
         }

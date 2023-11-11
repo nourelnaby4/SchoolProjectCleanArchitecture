@@ -19,7 +19,6 @@ F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\Sch
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.AssemblyInfoInputs.cache
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.AssemblyInfo.cs
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.csproj.CoreCompileInputs.cache
-F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.MvcApplicationPartsAssemblyInfo.cs
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.MvcApplicationPartsAssemblyInfo.cache
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\staticwebassets\msbuild.School.API.Microsoft.AspNetCore.StaticWebAssets.props
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\staticwebassets\msbuild.build.School.API.props
@@ -86,3 +85,4 @@ F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\Med
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\MediatR.Contracts.dll
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\AutoMapper.dll
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.MvcApplicationPartsAssemblyInfo.cs

@@ -74,6 +74,16 @@ namespace School.Core.Bases
                 Meta = Meta
             };
         }
+
+        public Response<T> UnprocessableEntity<T>(string message = null)
+        {
+            return new Response<T>()
+            {
+                StatusCode = System.Net.HttpStatusCode.UnprocessableEntity,
+                Succeeded = false,
+                Message = message == null ? "UnprocessableEntity" : message
+            };
+        }
     }
 
 

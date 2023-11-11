@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace School.Infrastructure.IRepositories
 {
-    public interface IStudentRepository
+    public interface IStudentRepository:IGenericRepository<Student>
     {
-        Task<IEnumerable<Student>> GetAllAsync();
+      
     }
 }

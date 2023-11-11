@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace School.Infrastructure.IRepositories
         IQueryable<T> GetTableNoTracking();
         IQueryable<T> GetTableAsTracking();
         Task<T> AddAsync(T entity);
+        Task<bool> IsExist(Expression<Func<T, bool>> expression);
         Task AddRangeAsync(ICollection<T> entities);
         Task UpdateAsync(T entity);
         Task UpdateRangeAsync(ICollection<T> entities);

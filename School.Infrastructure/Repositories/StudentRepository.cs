@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace School.Infrastructure.Repositories
 {
    
-    public class StudentRepository:GenericRepositoryAsync<Student>, IGenericRepository<Student> ,IStudentRepository
+    public class StudentRepository:GenericRepositoryAsync<Student>,IStudentRepository
     {
         #region fields
         private readonly ApplicationDbContext _context;
@@ -27,14 +27,6 @@ namespace School.Infrastructure.Repositories
         }
         #endregion
 
-
-
-        #region functions
-        public async Task<IEnumerable<Student>> GetAllAsync()
-        {
-            return await _context.students.Include(x=>x.Department).ToListAsync();
-        }
-        #endregion
 
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using School.Infrastructure.IRepositories;
+using System.Linq.Expressions;
 
 namespace School.Infrastructure.Repositories
 {
@@ -111,6 +112,10 @@ namespace School.Infrastructure.Repositories
         {
             return _dbContext.Set<T>().AsQueryable();
 
+        }
+        public Task<bool> IsExist(Expression<Func<T, bool>> expression)
+        {
+            return _dbContext.Set<T>().AnyAsync(expression);
         }
 
         public virtual async Task UpdateRangeAsync(ICollection<T> entities)
