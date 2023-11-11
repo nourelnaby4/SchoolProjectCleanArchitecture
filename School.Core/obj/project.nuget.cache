@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tnwH/ubkuEwTJfRmCKHDGn8ZMHOljM2AYa3nj4Lvl9hL2OlpAEkkKD9G+t3Auz0evSG7D42XEyvlGRckr1vy/g==",
+  "dgSpecHash": "qeeImTzsXn2EvePA9BIQp2dej5SCi8RhMnGcIyKH7CishLiihcZxUgmPBcPhyI0oyQleSK8Wi1W8t2LyTJMINA==",
   "success": true,
   "projectFilePath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Ahmed\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Ahmed\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
+    "C:\\Users\\Ahmed\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.8.0\\fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

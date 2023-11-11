@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using School.Core.Bases;
 using School.Core.Features.Students.Commands.Models;
+using School.Core.Features.Students.Commands.Validations;
 using School.Core.Features.Students.Queries.Models;
 using School.Data.MetaData;
 using System.Net;
@@ -37,6 +38,7 @@ namespace School.API.Controllers
         [HttpPost(StudentRouting.Prefix)]
         public async Task<IActionResult> Create([FromBody] CreateStudentCommand createStudentCommand)
         {
+            
             var result = await _mediator.Send(createStudentCommand);
             return _response.NewResult(result);
         }

@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using School.Core.Bases;
+using School.Core.Behavior;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +20,16 @@ namespace School.Core
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddTransient<ControllerResponse>();
+
+
+
+
+            // Get Validators
+
+            // must install fluent validation injection
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
 
             return services;
         }

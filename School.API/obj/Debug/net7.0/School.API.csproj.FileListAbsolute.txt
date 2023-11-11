@@ -86,3 +86,5 @@ F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\Med
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\AutoMapper.dll
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\obj\Debug\net7.0\School.API.MvcApplicationPartsAssemblyInfo.cs
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\FluentValidation.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.API\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
