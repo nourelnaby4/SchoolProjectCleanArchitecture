@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qeeImTzsXn2EvePA9BIQp2dej5SCi8RhMnGcIyKH7CishLiihcZxUgmPBcPhyI0oyQleSK8Wi1W8t2LyTJMINA==",
+  "dgSpecHash": "PCXdMk+7JJadj9Bw1MDslZup5NELgiCSbM3+o66Rdya3NIEepB2cSFx8CMSFQ124bw7iWjMon4cbGa2ctcdUKw==",
   "success": true,
   "projectFilePath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.1.0\\microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\8.0.0\\microsoft.extensions.localization.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",

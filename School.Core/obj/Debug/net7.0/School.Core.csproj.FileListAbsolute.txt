@@ -17,3 +17,10 @@ F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\bin\Debug\net7.0\Sc
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\bin\Debug\net7.0\School.Service.pdb
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\School.Core.csproj.AssemblyReference.cache
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\School.Core.csproj.CopyComplete
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\bin\Debug\net7.0\Ar\School.Core.resources.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\bin\Debug\net7.0\En\School.Core.resources.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\School.Core.Resources.Resource.Ar.resources
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\School.Core.Resources.Resource.En.resources
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\School.Core.csproj.GenerateResource.cache
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\Ar\School.Core.resources.dll
+F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Core\obj\Debug\net7.0\En\School.Core.resources.dll

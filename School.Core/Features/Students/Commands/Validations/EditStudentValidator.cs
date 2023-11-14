@@ -1,6 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Localization;
 using School.Core.Features.Students.Commands.Models;
+using School.Core.Resources;
+using School.Core.SharedResources;
 using School.Service.Abstracts;
 using System;
 using System.Collections.Generic;
@@ -15,15 +18,19 @@ namespace School.Core.Features.Students.Commands.Validations
     {
         #region fields
         private readonly IStudentService _studentService;
+        private readonly IStringLocalizer<Resource> _stringLocalizer;
         #endregion
 
 
         #region constractur
-        public EditStudentValidator(IStudentService studentService)
-        {
+        public EditStudentValidator(IStudentService studentService, IStringLocalizer<Resource> stringLocalizer)
+        { 
+
+                   _studentService = studentService;
+            _stringLocalizer = stringLocalizer;
             ApplyValidationsRule();
             ApplyCustomValidationRule();
-            _studentService = studentService;
+     
         }
         #endregion
 
@@ -46,8 +53,9 @@ namespace School.Core.Features.Students.Commands.Validations
         public void ApplyCustomValidationRule()
         {
             RuleFor(x => x.Name)
-                .MustAsync(async (Model,key, CancellationToken) => !await _studentService.IsExistNameExpectYourNameAsync(Model.Name,Model.Id))
-                .WithMessage("Name Is Exist");
+                .MustAsync(async (Model, key, CancellationToken) => !await _studentService.IsExistNameExpectYourNameAsync(Model.Name, Model.Id))
+
+                .WithMessage(_stringLocalizer[ResourceKeys.NameExist]);
         }
         #endregion
     }

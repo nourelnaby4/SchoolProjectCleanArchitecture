@@ -2,9 +2,11 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using Microsoft.Extensions.Localization;
 using School.Core.Bases;
 using School.Core.Features.Students.Queries.Models;
 using School.Core.Features.Students.Queries.Responses;
+using School.Core.Resources;
 using School.Core.Wrapper;
 using School.Data.Entities;
 using School.Service.Abstracts;
@@ -24,10 +26,12 @@ namespace School.Core.Features.Students.Queries.Handlers
     {
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
-        public StudentQueryHandler(IStudentService studentService, IMapper mapper)
+        private readonly IStringLocalizer<Resource> _stringLocalizer;
+        public StudentQueryHandler(IStudentService studentService, IMapper mapper,IStringLocalizer<Resource> stringLocalizer)
         {
             _studentService = studentService;
             _mapper = mapper;
+            _stringLocalizer = stringLocalizer;
         }
 
         public async Task<Response<IEnumerable<GetStudentsResponse>>> Handle(GetStudentsQuery request, CancellationToken cancellationToken)
