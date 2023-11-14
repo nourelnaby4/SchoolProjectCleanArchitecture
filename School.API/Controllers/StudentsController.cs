@@ -25,14 +25,20 @@ namespace School.API.Controllers
         public async Task<IActionResult> Get()
         {
             var result = await _mediator.Send(new GetStudentsQuery());
-            return _response.NewResult(result);
+            return Ok(result);
         }
 
         [HttpGet(StudentRouting.GetById)]
         public async Task<IActionResult> Get([FromRoute]int id)
         {
             var result = await _mediator.Send(new GetStudentByIdQuery(id));
-            return _response.NewResult(result);
+            return Ok(result);
+        }
+        [HttpGet(StudentRouting.Paginated)]
+        public async Task<IActionResult> PaginatedStudents([FromQuery] GetStudentsPaginatedQuery getStudentsPaginatedQuery)
+        {
+            var result = await _mediator.Send(getStudentsPaginatedQuery);
+            return Ok(result);
         }
 
         [HttpPost(StudentRouting.Prefix)]
@@ -43,6 +49,14 @@ namespace School.API.Controllers
             return _response.NewResult(result);
         }
 
+        [HttpPut(StudentRouting.Prefix)]
+        public async Task<IActionResult> Edit([FromBody] EditStudentCommand editStudentCommand)
+        {
+            var result = await _mediator.Send(editStudentCommand);
+            return _response.NewResult(result);
+        }
+
+      
 
     }
 

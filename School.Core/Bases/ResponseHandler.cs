@@ -34,6 +34,17 @@ namespace School.Core.Bases
                 Meta = Meta
             };
         }
+        public Response<T> Success<T>(T entity,string message, object Meta = null)
+        {
+            return new Response<T>()
+            {
+                Data = entity,
+                StatusCode = System.Net.HttpStatusCode.OK,
+                Succeeded = true,
+                Message = message,
+                Meta = Meta
+            };
+        }
         public Response<T> Unauthorized<T>()
         {
             return new Response<T>()

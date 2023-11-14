@@ -113,7 +113,7 @@ namespace School.Infrastructure.Repositories
             return _dbContext.Set<T>().AsQueryable();
 
         }
-        public Task<bool> IsExist(Expression<Func<T, bool>> expression)
+        public Task<bool> IsExistAsync(Expression<Func<T, bool>> expression)
         {
             return _dbContext.Set<T>().AnyAsync(expression);
         }

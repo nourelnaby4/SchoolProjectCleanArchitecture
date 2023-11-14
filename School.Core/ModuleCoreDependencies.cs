@@ -21,14 +21,9 @@ namespace School.Core
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddTransient<ControllerResponse>();
 
-
-
-
-            // Get Validators
-
             // must install fluent validation injection
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 
             return services;

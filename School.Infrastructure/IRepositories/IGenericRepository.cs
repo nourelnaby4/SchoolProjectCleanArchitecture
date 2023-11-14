@@ -19,7 +19,7 @@ namespace School.Infrastructure.IRepositories
         IQueryable<T> GetTableNoTracking();
         IQueryable<T> GetTableAsTracking();
         Task<T> AddAsync(T entity);
-        Task<bool> IsExist(Expression<Func<T, bool>> expression);
+        Task<bool> IsExistAsync(Expression<Func<T, bool>> expression);
         Task AddRangeAsync(ICollection<T> entities);
         Task UpdateAsync(T entity);
         Task UpdateRangeAsync(ICollection<T> entities);

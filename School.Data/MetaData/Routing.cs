@@ -18,6 +18,7 @@ namespace School.Data.MetaData
         public const string Prefix = $"{Routing.root}/Student";
         public const string GetAll = $"{Prefix}";
         public const string GetById = $"{Prefix}/" + "{id}";
+        public const string Paginated = $"{Prefix}/" +"Paginated";
 
     }
 }
