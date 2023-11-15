@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Bad Request</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Created Successfully</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Deleted Successfull</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>Max Length is</value>
+  </data>
+  <data name="MustNotBeEmpty" xml:space="preserve">
+    <value>Must Not Be Empty</value>
+  </data>
+  <data name="MustNotBeNull" xml:space="preserve">
+    <value>Must Not Be Null</value>
+  </data>
   <data name="NameExist" xml:space="preserve">
     <value>This Name is Existed</value>
   </data>
@@ -125,5 +143,14 @@
   </data>
   <data name="Required" xml:space="preserve">
     <value>must be added</value>
+  </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>UnAuthorized</value>
+  </data>
+  <data name="UnprocessableEntity" xml:space="preserve">
+    <value>Unprocessable Entity</value>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Updated Successfully</value>
   </data>
 </root>

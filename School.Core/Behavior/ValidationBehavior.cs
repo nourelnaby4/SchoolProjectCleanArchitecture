@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
+using Microsoft.Extensions.Localization;
+using School.Core.SharedResources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,11 @@ namespace School.Core.Behavior
        where TRequest : IRequest<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
-        public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
+        private readonly IStringLocalizer<Resource> _localizer;
+        public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators,IStringLocalizer<Resource> localizer)
         {
             _validators = validators;
+            _localizer = localizer;
         }
 
      
@@ -29,7 +33,7 @@ namespace School.Core.Behavior
 
                 if (failures.Count != 0)
                 {
-                    var message = failures.Select(x => x.PropertyName + ": " + x.ErrorMessage).FirstOrDefault();
+                    var message = failures.Select(x =>  x.PropertyName + ": " + x.ErrorMessage).FirstOrDefault();
 
                     throw new ValidationException(message);
 

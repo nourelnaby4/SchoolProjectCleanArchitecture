@@ -13,7 +13,8 @@ namespace School.Core.Mapping.StudentMapping
         public void GetStudentsMapping()
         {
             CreateMap<Student, GetStudentsResponse>()
-                .ForMember(des => des.DepartmentName, option => option.MapFrom(src => src.Department.Name))
+                .ForMember(des => des.DepartmentName, option => option.MapFrom(src => src.getLanguageData(src.Department.NameAr, src.Department.NameAr)))
+                .ForMember(des => des.Name, option => option.MapFrom(src => src.getLanguageData(src.NameAr, src.NameEn)))
                 .ReverseMap();
         }
     }

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Localization;
 using School.Core.Bases;
 using School.Core.Features.Students.Queries.Models;
 using School.Core.Features.Students.Queries.Responses;
-using School.Core.Resources;
+using School.Core.SharedResources;
 using School.Core.Wrapper;
 using School.Data.Entities;
 using School.Service.Abstracts;
@@ -26,12 +26,12 @@ namespace School.Core.Features.Students.Queries.Handlers
     {
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
-        private readonly IStringLocalizer<Resource> _stringLocalizer;
-        public StudentQueryHandler(IStudentService studentService, IMapper mapper,IStringLocalizer<Resource> stringLocalizer)
+        private readonly IStringLocalizer<Resource> _localizer;
+        public StudentQueryHandler(IStudentService studentService, IMapper mapper,IStringLocalizer<Resource> localizer) :base(localizer)
         {
             _studentService = studentService;
             _mapper = mapper;
-            _stringLocalizer = stringLocalizer;
+            _localizer =  localizer;
         }
 
         public async Task<Response<IEnumerable<GetStudentsResponse>>> Handle(GetStudentsQuery request, CancellationToken cancellationToken)
@@ -56,10 +56,10 @@ namespace School.Core.Features.Students.Queries.Handlers
             Expression<Func<Student, GetStudentsPaginatedResponse>> selectExpression = e => new GetStudentsPaginatedResponse
             {
                 Id = e.Id,
-                Name = e.Name,
+                Name = e.NameEn,
                 Address = e.Address,
                 Phone = e.Phone,
-                DepartmentName = e.Department.Name
+                DepartmentName = e.Department.NameEn
             };
             var SelectQueryableStudent = queryableStudent.Select(selectExpression);
             var paginatedStudents =await SelectQueryableStudent.ToPaginatedListAsync(request.PageNumber,request.PageSize);

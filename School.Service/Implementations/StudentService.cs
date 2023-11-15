@@ -19,7 +19,6 @@ namespace School.Service.Implementations
     {
         #region fields
         private readonly IStudentRepository _studentRepository;
-
         #endregion
 
 
@@ -48,17 +47,17 @@ namespace School.Service.Implementations
         {
 
             await _studentRepository.AddAsync(student);
-            return new Response { IsSuccess = true, Message = "Added Successfully", StatusCode = HttpStatusCode.Created };
+            return new Response { IsSuccess = true, StatusCode = HttpStatusCode.Created };
         }
         public async Task<Response> EditStudentAsync(Student student)
         {
             await _studentRepository.UpdateAsync(student);
-            return new Response { IsSuccess = true, Message = "Edit Successfully", StatusCode = HttpStatusCode.OK };
+            return new Response { IsSuccess = true, StatusCode = HttpStatusCode.OK };
 
         }
         public async Task<bool> IsExistNameAsync(string name)
         {
-            return await _studentRepository.IsExistAsync(x => x.Name == name);
+            return await _studentRepository.IsExistAsync(x => x.NameEn == name);
         }
         public async Task<bool> IsExistIdAsync(int id)
         {
@@ -74,15 +73,17 @@ namespace School.Service.Implementations
             if (!string.IsNullOrEmpty(search))
             {
                 queryable = queryable.Where(x =>
-                    x.Name.Contains(search)    ||
+                    x.NameEn.Contains(search) ||
+                    x.NameAr.Contains(search) ||
                     x.Address.Contains(search) ||
-                    x.Phone.Contains(search)   ||
-                    x.Department.Name.Contains(search));
+                    x.Phone.Contains(search) ||
+                    x.Department.NameEn.Contains(search) ||
+                    x.Department.NameAr.Contains(search));
             }
             switch (orderingEnum)
             {
                 case StudentOrderingEnum.Name:
-                    queryable=queryable.OrderBy(x=>x.Name); 
+                    queryable = queryable.OrderBy(x => x.NameEn);
                     break;
                 case StudentOrderingEnum.Address:
                     queryable = queryable.OrderBy(x => x.Address);
@@ -91,7 +92,7 @@ namespace School.Service.Implementations
                     queryable = queryable.OrderBy(x => x.Phone);
                     break;
                 case StudentOrderingEnum.DepartmentName:
-                    queryable = queryable.OrderBy(x => x.Department.Name);
+                    queryable = queryable.OrderBy(x => x.Department.NameEn);
                     break;
                 default:
                     queryable = queryable.OrderBy(x => x.Id);
@@ -103,7 +104,7 @@ namespace School.Service.Implementations
 
         public async Task<bool> IsExistNameExpectYourNameAsync(string name, int id)
         {
-            return await _studentRepository.IsExistAsync(x => x.Name == name && x.Id != id);
+            return await _studentRepository.IsExistAsync(x => (x.NameEn == name ) && x.Id != id);
         }
 
 

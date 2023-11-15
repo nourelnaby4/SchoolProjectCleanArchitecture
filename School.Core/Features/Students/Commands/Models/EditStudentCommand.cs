@@ -16,7 +16,9 @@ namespace School.Core.Features.Students.Commands.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string NameAr { get; set; } 
+        [Required]
+        public string NameEn { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]

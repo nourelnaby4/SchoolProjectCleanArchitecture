@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Localization;
 using School.Core.Features.Students.Commands.Models;
-using School.Core.Resources;
 using School.Core.SharedResources;
 using School.Service.Abstracts;
 using System;
@@ -18,16 +17,16 @@ namespace School.Core.Features.Students.Commands.Validations
     {
         #region fields
         private readonly IStudentService _studentService;
-        private readonly IStringLocalizer<Resource> _stringLocalizer;
+        private readonly IStringLocalizer<Resource> _localizer;
         #endregion
 
 
         #region constractur
-        public EditStudentValidator(IStudentService studentService, IStringLocalizer<Resource> stringLocalizer)
+        public EditStudentValidator(IStudentService studentService, IStringLocalizer<Resource> localizer)
         { 
 
                    _studentService = studentService;
-            _stringLocalizer = stringLocalizer;
+            _localizer = localizer;
             ApplyValidationsRule();
             ApplyCustomValidationRule();
      
@@ -38,24 +37,33 @@ namespace School.Core.Features.Students.Commands.Validations
         #region functions
         public void ApplyValidationsRule()
         {
-            RuleFor(x => x.Name)
-                .NotNull().WithMessage("{PropertyName} Must Not be NULL")
-                .NotEmpty().WithMessage("{PropertyName} Must Not be Empty")
-                .MaximumLength(20).WithMessage("Max Length is 10");
+            RuleFor(x => x.NameAr)
+                .NotNull().WithMessage("{PropertyName}" + $"{_localizer[ResourceKeys.MustNotBeNull]}")
+                .NotEmpty().WithMessage("{PropertyName}" + $"{_localizer[ResourceKeys.MustNotBeEmpty]}")
+                .MaximumLength(20).WithMessage("{PropertyName} " + $"{_localizer[ResourceKeys.MaxLength]} 20");
+            RuleFor(x => x.NameEn)
+               .NotNull().WithMessage("{PropertyName}" + $"{_localizer[ResourceKeys.MustNotBeNull]}")
+               .NotEmpty().WithMessage("{PropertyName}" + $"{_localizer[ResourceKeys.MustNotBeEmpty]}")
+               .MaximumLength(20).WithMessage("{PropertyName} " + $"{_localizer[ResourceKeys.MaxLength]} 20");
 
-         
+
             RuleFor(x => x.Address)
-               .NotNull().WithMessage("{PropertyName} Must Not be NULL")
-               .NotEmpty().WithMessage("{PropertyName} Must Not be Empty")
-               .MaximumLength(50).WithMessage("Max Length is 10");
+               .NotNull().WithMessage("{PropertyName}" + $"{_localizer[ResourceKeys.MustNotBeNull]}")
+                .NotEmpty().WithMessage("{PropertyName}" + $"{_localizer[ResourceKeys.MustNotBeEmpty]}")
+                .MaximumLength(50).WithMessage("{PropertyName} " + $"{_localizer[ResourceKeys.MaxLength]} 50");
         }
 
         public void ApplyCustomValidationRule()
         {
-            RuleFor(x => x.Name)
-                .MustAsync(async (Model, key, CancellationToken) => !await _studentService.IsExistNameExpectYourNameAsync(Model.Name, Model.Id))
+            RuleFor(x => x.NameEn)
+                .MustAsync(async (Model, key, CancellationToken) => !await _studentService.IsExistNameExpectYourNameAsync(Model.NameEn, Model.Id))
 
-                .WithMessage(_stringLocalizer[ResourceKeys.NameExist]);
+                .WithMessage(_localizer[ResourceKeys.NameExist]);
+
+            RuleFor(x => x.NameAr)
+                .MustAsync(async (Model, key, CancellationToken) => !await _studentService.IsExistNameExpectYourNameAsync(Model.NameAr, Model.Id))
+
+                .WithMessage(_localizer[ResourceKeys.NameExist]);
         }
         #endregion
     }
