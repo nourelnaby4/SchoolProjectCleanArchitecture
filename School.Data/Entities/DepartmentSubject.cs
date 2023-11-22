@@ -11,14 +11,16 @@ namespace School.Data.Entities
     public class DepartmentSubject
     {
         [Key]
-        public int Id { get; set; }
         public int DepartmentId { get; set; }
+        [Key]
         public int SubjectId { get; set; }
 
         [ForeignKey("DepartmentId")]
+        [InverseProperty("DepartmentsSubjects")]
         public virtual Department Department { get; set; }
 
         [ForeignKey("SubjectId")]
+        [InverseProperty("DepartmentsSubjects")]
         public virtual Subject Subject { get; set; }
     }
 

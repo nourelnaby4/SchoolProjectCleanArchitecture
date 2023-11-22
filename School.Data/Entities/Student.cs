@@ -11,7 +11,12 @@ namespace School.Data.Entities
 {
     public class Student :GenericLocalizer
     {
+        public Student() 
+        { 
+            StudentSubjects=new HashSet<StudentSubject>();
+        }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [StringLength(100)]
         public string NameAr { get; set; } 
@@ -21,9 +26,13 @@ namespace School.Data.Entities
         public string Address { get; set; }
         [StringLength(500)]
         public string Phone { get; set; }
-        public int? DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
 
         [ForeignKey("DepartmentId")]
+        [InverseProperty("Students")]
         public virtual Department Department { get; set; }
+
+        [InverseProperty("Student")]
+        public virtual ICollection<StudentSubject> StudentSubjects { get; set; }
     }
 }

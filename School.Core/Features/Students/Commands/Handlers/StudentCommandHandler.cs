@@ -39,12 +39,12 @@ namespace School.Core.Features.Students.Commands.Handlers
 
         public async Task<Response<Student>> Handle(EditStudentCommand request, CancellationToken cancellationToken)
         {
-            var isExist =await _studentService.IsExistIdAsync(request.Id);
-            if(isExist ==false)
+            var student =await _studentService.GetStudentByIdAsync(request.Id);
+            if(student is null)
             {
                 return NotFound<Student>();
             }
-            var studentMapping= _mapper.Map<Student>(request);
+            var studentMapping= _mapper.Map(request,student);
             var result = await _studentService.EditStudentAsync(studentMapping);
             if (!result.IsSuccess)
                 return UnprocessableEntity<Student>();

@@ -30,6 +30,9 @@ namespace School.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ManagerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("NameAr")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -42,10 +45,28 @@ namespace School.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ManagerId")
+                        .IsUnique();
+
                     b.ToTable("departments");
                 });
 
             modelBuilder.Entity("School.Data.Entities.DepartmentSubject", b =>
+                {
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SubjectId", "DepartmentId");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("departmentSubjects");
+                });
+
+            modelBuilder.Entity("School.Data.Entities.Instructor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,19 +74,45 @@ namespace School.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DepartmentId")
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Salary")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("SupervisorId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SupervisorId");
+
+                    b.ToTable("instructors");
+                });
+
+            modelBuilder.Entity("School.Data.Entities.InstructorSubject", b =>
+                {
+                    b.Property<int>("InstructorId")
                         .HasColumnType("int");
 
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("DepartmentId");
+                    b.HasKey("InstructorId", "SubjectId");
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("departmentSubjects");
+                    b.ToTable("instructorSubjects");
                 });
 
             modelBuilder.Entity("School.Data.Entities.Student", b =>
@@ -81,8 +128,7 @@ namespace School.Infrastructure.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int?>("DepartmentId")
-                        .IsRequired()
+                    b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("NameAr")
@@ -109,23 +155,15 @@ namespace School.Infrastructure.Migrations
 
             modelBuilder.Entity("School.Data.Entities.StudentSubject", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("SubjectId")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SubjectId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("SubjectId", "StudentId");
 
                     b.HasIndex("StudentId");
-
-                    b.HasIndex("SubjectId");
 
                     b.ToTable("studentSubjects");
                 });
@@ -156,6 +194,17 @@ namespace School.Infrastructure.Migrations
                     b.ToTable("subjects");
                 });
 
+            modelBuilder.Entity("School.Data.Entities.Department", b =>
+                {
+                    b.HasOne("School.Data.Entities.Instructor", "Manager")
+                        .WithOne("DepartmentManage")
+                        .HasForeignKey("School.Data.Entities.Department", "ManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Manager");
+                });
+
             modelBuilder.Entity("School.Data.Entities.DepartmentSubject", b =>
                 {
                     b.HasOne("School.Data.Entities.Department", "Department")
@@ -175,6 +224,36 @@ namespace School.Infrastructure.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("School.Data.Entities.Instructor", b =>
+                {
+                    b.HasOne("School.Data.Entities.Instructor", "Suprvisor")
+                        .WithMany("Instructors")
+                        .HasForeignKey("SupervisorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Suprvisor");
+                });
+
+            modelBuilder.Entity("School.Data.Entities.InstructorSubject", b =>
+                {
+                    b.HasOne("School.Data.Entities.Instructor", "Instructor")
+                        .WithMany("InstructorSubjects")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("School.Data.Entities.Subject", "Subject")
+                        .WithMany("InstructorSubjects")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Instructor");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("School.Data.Entities.Student", b =>
                 {
                     b.HasOne("School.Data.Entities.Department", "Department")
@@ -189,7 +268,7 @@ namespace School.Infrastructure.Migrations
             modelBuilder.Entity("School.Data.Entities.StudentSubject", b =>
                 {
                     b.HasOne("School.Data.Entities.Student", "Student")
-                        .WithMany()
+                        .WithMany("StudentSubjects")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -212,9 +291,26 @@ namespace School.Infrastructure.Migrations
                     b.Navigation("Students");
                 });
 
+            modelBuilder.Entity("School.Data.Entities.Instructor", b =>
+                {
+                    b.Navigation("DepartmentManage")
+                        .IsRequired();
+
+                    b.Navigation("InstructorSubjects");
+
+                    b.Navigation("Instructors");
+                });
+
+            modelBuilder.Entity("School.Data.Entities.Student", b =>
+                {
+                    b.Navigation("StudentSubjects");
+                });
+
             modelBuilder.Entity("School.Data.Entities.Subject", b =>
                 {
                     b.Navigation("DepartmentsSubjects");
+
+                    b.Navigation("InstructorSubjects");
 
                     b.Navigation("StudentsSubjects");
                 });

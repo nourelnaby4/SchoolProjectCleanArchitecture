@@ -35,7 +35,7 @@ namespace School.Service.Implementations
 
         public async Task<IEnumerable<Student>> GetStudentsAsync()
         {
-            return await _studentRepository.GetTableNoTracking().ToListAsync();
+            return await _studentRepository.GetTableNoTracking().Include(x=>x.Department).ToListAsync();
         }
 
         public async Task<Student> GetStudentByIdAsync(int id)

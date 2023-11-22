@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using School.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace School.Infrastructure.Data
 {
@@ -17,7 +13,13 @@ namespace School.Infrastructure.Data
         public DbSet<Subject> subjects { get; set; }
         public DbSet<DepartmentSubject> departmentSubjects { get; set; }
         public DbSet<StudentSubject> studentSubjects { get; set; }
-        
+        public DbSet<Instructor> instructors { get; set; }
+        public DbSet<InstructorSubject> instructorSubjects { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); // apply Entities Configurations
+        }
     }
 }

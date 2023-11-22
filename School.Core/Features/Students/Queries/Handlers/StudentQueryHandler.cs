@@ -38,15 +38,18 @@ namespace School.Core.Features.Students.Queries.Handlers
         {
             var students = await _studentService.GetStudentsAsync();
             var studentsMapper = _mapper.Map<IEnumerable<GetStudentsResponse>>(students);
-            return Success(studentsMapper, string.Empty);
+            var meta=new {Count= studentsMapper.Count()};
+            return Success(studentsMapper, string.Empty,meta);
         }
 
 
         public async Task<Response<GetStudentByIdResponse>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
         {
             var student = await _studentService.GetStudentByIdAsync(request.id);
-            var studentMapping = _mapper.Map<GetStudentByIdResponse>(student);
-            return Success(studentMapping, string.Empty);
+            var studentsMapper = _mapper.Map<GetStudentByIdResponse>(student);
+           
+
+            return Success(studentsMapper, string.Empty);
         }
 
         public async Task<PaginatedResult<GetStudentsPaginatedResponse>> Handle(GetStudentsPaginatedQuery request, CancellationToken cancellationToken)
@@ -63,6 +66,7 @@ namespace School.Core.Features.Students.Queries.Handlers
             };
             var SelectQueryableStudent = queryableStudent.Select(selectExpression);
             var paginatedStudents =await SelectQueryableStudent.ToPaginatedListAsync(request.PageNumber,request.PageSize);
+            paginatedStudents.Meta=new {Count= paginatedStudents.Data.Count()};
             return paginatedStudents;
 
 

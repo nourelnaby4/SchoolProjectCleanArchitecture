@@ -4272,11 +4272,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.API\\School.API.csproj",
+      "projectUniqueName": "E:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.API\\School.API.csproj",
       "projectName": "School.API",
-      "projectPath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.API\\School.API.csproj",
+      "projectPath": "E:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.API\\School.API.csproj",
       "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.API\\obj\\",
+      "outputPath": "E:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4298,8 +4298,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj": {
-              "projectPath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj"
+            "E:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj": {
+              "projectPath": "E:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Core\\School.Core.csproj"
             }
           }
         }
@@ -4356,7 +4356,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

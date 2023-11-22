@@ -9,3 +9,15 @@ F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\Sc
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\refint\School.Data.dll
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.pdb
 F:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\ref\School.Data.dll
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\bin\Debug\net7.0\School.Data.deps.json
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\bin\Debug\net7.0\School.Data.dll
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\bin\Debug\net7.0\School.Data.pdb
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.AssemblyInfoInputs.cache
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.AssemblyInfo.cs
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.csproj.CoreCompileInputs.cache
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.sourcelink.json
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.dll
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\refint\School.Data.dll
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\School.Data.pdb
+E:\Advanced .Net6\SchoolProjectCleanArchitecture\School.Data\obj\Debug\net7.0\ref\School.Data.dll

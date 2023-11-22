@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wfZA3vtl8mC6JsG54TqBUS004N56MfC7A7cX6hfhAYViydHibB1oh/qmFVhZdzrQPR063f7SS2tIjspHpSqj6A==",
+  "dgSpecHash": "oNqNi0QAWbsYTCU6qCDYRC4ESnyLexpIokD/AZghmqnSE73KbtRIHslpopOYOx1Lk7POk4DBYsqzo0DnwLHBxA==",
   "success": true,
-  "projectFilePath": "F:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Data\\School.Data.csproj",
+  "projectFilePath": "E:\\Advanced .Net6\\SchoolProjectCleanArchitecture\\School.Data\\School.Data.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
